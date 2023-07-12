@@ -29,6 +29,7 @@ class Api {
     addCard({ name, link }) {
       return fetch(`${this._address}/cards`, {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
           'Authorization': `Bearer ${this._token}`,
           'Content-Type': 'application/json',
@@ -44,6 +45,7 @@ class Api {
     removeCard(cardId) {
       return fetch(`${this._address}/cards/${cardId}`, {
         method: 'DELETE',
+        mode: 'no-cors',
         headers: {
           'Authorization': `Bearer ${this._token}`,
           'Content-Type': 'application/json',
@@ -64,6 +66,7 @@ class Api {
     setUserInfo({ name, about }) {
       return fetch(`${this._address}/users/me`, {
         method: 'PATCH',
+        mode: 'no-cors',
         headers: {
           'Authorization': `Bearer ${this._token}`,
           'Content-Type': 'application/json',
@@ -79,6 +82,7 @@ class Api {
     setUserAvatar({ avatar }) {
       return fetch(`${this._address}/users/me/avatar`, {
         method: 'PATCH',
+        mode: 'no-cors',
         headers: {
           'Authorization': `Bearer ${this._token}`,
           'Content-Type': 'application/json',
@@ -93,6 +97,7 @@ class Api {
 
       return fetch(`${this._address}/cards/${cardId}/likes`, {
         method: like ? 'PUT' : 'DELETE',
+        mode: 'no-cors',
         headers: {
           'Authorization': `Bearer ${this._token}`,
           'Content-Type': 'application/json',
@@ -103,6 +108,7 @@ class Api {
     register(email, password) {
       return fetch(`${this._address}/signup`, {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -114,6 +120,7 @@ class Api {
     login(email, password) {
       return fetch(`${this._address}/signin`, {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -130,6 +137,7 @@ class Api {
     checkToken(token) {
       return fetch(`${this._address}/users/me`, {
         method: 'GET',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
