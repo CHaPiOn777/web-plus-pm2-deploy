@@ -58,7 +58,7 @@ function App() {
           console.log(err);
         });
     }
-  }, [history, token]);
+  }, [history]);
 
 
 
