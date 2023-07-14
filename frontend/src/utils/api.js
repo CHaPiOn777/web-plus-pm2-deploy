@@ -141,6 +141,6 @@ class Api {
   }
   }
   // Замените на адрес вашего бэкенда
-  const api = new Api('http://api.vladislav.student.nomoredomains.work');
+  const api = new Api('https://api.vladislav.student.nomoredomains.work');
 
   export default api;
